@@ -2,7 +2,7 @@
 	"fonction": {
 		"prefix": "fonction",
 		"body": [
-			"fonction ${1:nom}(${2:parametres}) : renvoie ${3:typeretour}",
+			"fonction ${1:nom}(${2:x : in type}) renvoie ${3|entier,entier_naturel,reel,booleen,caractere,char,string|}",
 			"debut",
 			"\t$0",
 			"fin"
@@ -12,12 +12,12 @@
 	"procedure": {
 		"prefix": "procedure",
 		"body": [
-			"procedure ${1:nom}(${2:parametres})",
+			"procedure ${1:nom}(${2:x : in type})",
 			"debut",
 			"\t$0",
 			"fin"
 		],
-		"description": "Insertion d'un bloc de fonction de structure InOut"
+		"description": "Insertion d'un bloc de procedure"
 	},
 	"algorithme": {
 		"prefix": "algorithme",
@@ -29,6 +29,27 @@
 		],
 		"description": "Insertion d'un bloc d'algorithme"
 	},
+	"afficher": {
+		"prefix": "afficher",
+		"body": [
+			"afficher (\"${1:Casali le goat}\");"
+		],
+		"description": "Affiche un message"
+	},
+	"saisir": {
+		"prefix": "saisir",
+		"body": [
+			"saisir (${1:variable});"
+		],
+		"description": "Lit une valeur au clavier"
+	},
+	"ligne_suivante": {
+		"prefix": "ligne_suivante",
+		"body": [
+			"ligne_suivante;"
+		],
+		"description": "Saut de ligne"
+	},
 	"pour": {
 		"prefix": "pour",
 		"body": [
@@ -38,26 +59,6 @@
 			"ffaire"
 		],
 		"description": "Insertion d'un bloc de boucle \"pour\""
-	},
-	"si": {
-		"prefix": "si",
-		"body": [
-			"si (${1:conditon})",
-			"\t$0",
-			"fsi"
-		],
-		"description": "Insertion d'un bloc \"si\""
-	},
-	"si_sinon": {
-		"prefix": "sisinon",
-		"body": [
-			"si (${1:conditon})",
-			"\t$0",
-			"sinon",
-			"\t",
-			"fsi"
-		],
-		"description": "Insertion d'un bloc \"si-sinon\""
 	},
 	"tant_que": {
 		"prefix": "tant_que",
@@ -69,6 +70,47 @@
 		],
 		"description": "Insertion d'un bloc \"tant que\""
 	},
+	"si": {
+		"prefix": "si",
+		"body": [
+			"si (${1:condition})",
+			"\t$0",
+			"fsi"
+		],
+		"description": "Insertion d'un bloc \"si\""
+	},
+	"si_sinon": {
+		"prefix": "sisinon",
+		"body": [
+			"si (${1:condition})",
+			"\t$0",
+			"sinon",
+			"\t",
+			"fsi"
+		],
+		"description": "Insertion d'un bloc \"si-sinon\""
+	},
+	"declarer": {
+		"prefix": "declarer",
+		"body": [
+			"declarer ${1:nom} : ${2|entier,entier_naturel,reel,booleen,caractere,char,string,tableau_de|};"
+		],
+		"description": "Déclaration d'une variable (menu de types)"
+	},
+	"declarer et affecter": {
+		"prefix": "declarer et affecter",
+		"body": [
+			"declarer ${1:nom} : ${2|entier,entier_naturel,reel,booleen,caractere,char,string,tableau_de|} <- ${3:valeur};"
+		],
+		"description": "Déclaration avec affectation (menu de types)"
+	},
+	"declarer constante": {
+		"prefix": "declarer constante",
+		"body": [
+			"declarer K${1:nom} : ${2|entier,entier_naturel,reel,booleen,caractere,char,string|} <- ${3:valeur};"
+		],
+		"description": "Déclaration d'une constante (menu de types)"
+	},
 	"<-": {
 		"prefix": "prend",
 		"body": [
@@ -76,22 +118,46 @@
 		],
 		"description": "Assignation d'une valeur à une variable"
 	},
-	"declarer": {
-		"prefix": "declarer",
-		"body": [
-			"declarer ${1:nom} : ${2:type};"
-		]
+	"entier": {
+		"prefix": "entier",
+		"body": ["entier"],
+		"description": "Type entier"
 	},
-	"declarer et affecter": {
-		"prefix": "declarer et affecter",
-		"body": [
-			"declarer ${1:nom} : ${2:type} <- ${3:valeur};"
-		]
+	"entier_naturel": {
+		"prefix": "entier_naturel",
+		"body": ["entier_naturel"],
+		"description": "Type entier naturel (positif)"
 	},
-	"declarer constante": {
-		"prefix": "delarer constante",
+	"reel": {
+		"prefix": "reel",
+		"body": ["reel"],
+		"description": "Type réel"
+	},
+	"booleen": {
+		"prefix": "booleen",
+		"body": ["booleen"],
+		"description": "Type booléen (vrai/faux)"
+	},
+	"caractere": {
+		"prefix": "caractere",
+		"body": ["caractere"],
+		"description": "Type caractère ('a')"
+	},
+	"char": {
+		"prefix": "char",
+		"body": ["char"],
+		"description": "Type caractère (alias)"
+	},
+	"string": {
+		"prefix": "string",
+		"body": ["string"],
+		"description": "Type chaîne de caractères"
+	},
+	"tableau_de": {
+		"prefix": "tableau_de",
 		"body": [
-			"declarer K${1:nom} : ${2:type} <- ${3:valeur};"
-		]
+			"tableau_de ${1:taille} ${2|entier,entier_naturel,reel,booleen,caractere,char,string|}"
+		],
+		"description": "Type tableau (taille optionnelle, menu pour le type d'élément)"
 	}
 }
