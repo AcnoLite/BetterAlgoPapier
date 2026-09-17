@@ -1,0 +1,56 @@
+{
+    "name": "better-algo-papier",
+    "displayName": "Better Algo Papier",
+    "publisher": "betteriutinfoaix",
+    "author": { "name": "BetterIUTInfoAix" },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/BetterIUTInfoAix/BetterAlgoPapier"
+    },
+    "description": "Coloration syntaxique, snippets et complétion pour l'algorithmique sur papier de l'IUT d'Aix",
+    "icon": "extension.png",
+    "version": "1.0.0",
+
+    "engines": {
+        "vscode": "^1.39.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "keywords": [
+        "algo",
+        "papier",
+        "algorithmique",
+        "pseudocode",
+        "Algo Papier",
+        "Casali"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "algo-papier",
+                "aliases": [
+                    "algo-Papier",
+                    "algo-papier"
+                ],
+                "extensions": [
+                    ".algo"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "algo-papier",
+                "scopeName": "source.algo",
+                "path": "./syntaxes/algo-papier.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "algo-papier",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    }
+}

@@ -1,0 +1,48 @@
+name: Build VSIX et release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: "Tag de la release (ex: v1.0.0)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Construire le .vsix
+        run: npx --yes @vscode/vsce package --skip-license --no-dependencies
+
+      - name: Vérifier que le fichier a bien été produit
+        run: ls -la *.vsix
+
+      - name: Garder le .vsix comme artefact
+        uses: actions/upload-artifact@v4
+        with:
+          name: vsix
+          path: "*.vsix"
+
+      - name: Créer la Release GitHub avec le .vsix attaché
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.inputs.tag_name || github.ref_name }}
+          target_commitish: ${{ github.sha }}
+          files: "*.vsix"
+          generate_release_notes: true
