@@ -88,7 +88,7 @@
 		},
 		"expression": {
 			"name": "support.function",
-			"match": "\\b(afficher|saisir|ligne_suivante|taille|toupper|tolower|succ|prec|redimensionner)\\b"
+			"match": "\\b(afficher|saisir|ligne_suivante|taille|redimensionner|modulo|rand|rang|succ|prec|toupper|tolower|isdigit|isalpha|isalnum|isspace|ispunct|isupper|islower)\\b"
 		},
 		"params": {
 			"name": "variable.parameter",

@@ -133,6 +133,111 @@
 		],
 		"description": "Branche sinon_si (à insérer dans un bloc si existant)"
 	},
+	"redimensionner": {
+		"prefix": "redimensionner",
+		"body": [
+			"redimensionner (${1:tableau}, ${2:taille});"
+		],
+		"description": "Redimensionne un tableau"
+	},
+	"taille": {
+		"prefix": "taille",
+		"body": [
+			"taille (${1:tableau})"
+		],
+		"description": "Nombre d'éléments d'un tableau ou d'une chaine"
+	},
+	"modulo": {
+		"prefix": "modulo",
+		"body": [
+			"modulo (${1:a}, ${2:b})"
+		],
+		"description": "Reste de la division entière"
+	},
+	"rand": {
+		"prefix": "rand",
+		"body": [
+			"rand (${1:min}, ${2:max})"
+		],
+		"description": "Entier aléatoire entre min et max (inclus)"
+	},
+	"rang": {
+		"prefix": "rang",
+		"body": [
+			"rang (${1:caractere})"
+		],
+		"description": "Code numérique d'un caractère"
+	},
+	"succ": {
+		"prefix": "succ",
+		"body": [
+			"succ (${1:caractere})"
+		],
+		"description": "Caractère suivant"
+	},
+	"prec": {
+		"prefix": "prec",
+		"body": [
+			"prec (${1:caractere})"
+		],
+		"description": "Caractère précédent"
+	},
+	"toupper": {
+		"prefix": "toupper",
+		"body": [
+			"toupper (${1:caractere})"
+		],
+		"description": "Convertit en majuscule"
+	},
+	"tolower": {
+		"prefix": "tolower",
+		"body": [
+			"tolower (${1:caractere})"
+		],
+		"description": "Convertit en minuscule"
+	},
+	"isdigit": {
+		"prefix": "isdigit",
+		"body": [
+			"isdigit (${1:caractere})"
+		],
+		"description": "Vrai si le caractère est un chiffre"
+	},
+	"isalpha": {
+		"prefix": "isalpha",
+		"body": [
+			"isalpha (${1:caractere})"
+		],
+		"description": "Vrai si le caractère est une lettre"
+	},
+	"isalnum": {
+		"prefix": "isalnum",
+		"body": [
+			"isalnum (${1:caractere})"
+		],
+		"description": "Vrai si lettre ou chiffre"
+	},
+	"isspace": {
+		"prefix": "isspace",
+		"body": [
+			"isspace (${1:caractere})"
+		],
+		"description": "Vrai si espace ou tabulation"
+	},
+	"isupper": {
+		"prefix": "isupper",
+		"body": [
+			"isupper (${1:caractere})"
+		],
+		"description": "Vrai si majuscule"
+	},
+	"islower": {
+		"prefix": "islower",
+		"body": [
+			"islower (${1:caractere})"
+		],
+		"description": "Vrai si minuscule"
+	},
 	"si": {
 		"prefix": "si",
 		"body": [
