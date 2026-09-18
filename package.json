@@ -9,7 +9,7 @@
     },
     "description": "Coloration syntaxique, snippets et complétion pour l'algorithmique sur papier de l'IUT d'Aix",
     "icon": "extension.png",
-    "version": "1.0.1",
+    "version": "1.0.2",
 
     "engines": {
         "vscode": "^1.39.0"
@@ -26,6 +26,11 @@
         "Casali"
     ],
     "contributes": {
+        "configurationDefaults": {
+            "[algo-papier]": {
+                "editor.suggest.snippetsPreventQuickSuggestions": false
+            }
+        },
         "languages": [
             {
                 "id": "algo-papier",

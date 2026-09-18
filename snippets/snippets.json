@@ -2,7 +2,7 @@
 	"fonction": {
 		"prefix": "fonction",
 		"body": [
-			"fonction ${1:nom}(${2:x : in type}) renvoie ${3|entier,entier_naturel,reel,booleen,caractere,char,string|}",
+			"fonction ${1:nom}(${2:x : in type}) renvoie ${3|entier,entier_naturel,reel,booleen,caractere,string,tableau_de|}",
 			"debut",
 			"\t$0",
 			"fin"
@@ -93,21 +93,21 @@
 	"declarer": {
 		"prefix": "declarer",
 		"body": [
-			"declarer ${1:nom} : ${2|entier,entier_naturel,reel,booleen,caractere,char,string,tableau_de|};"
+			"declarer ${1:nom} : ${2|entier,entier_naturel,reel,booleen,caractere,string,tableau_de|};"
 		],
 		"description": "Déclaration d'une variable (menu de types)"
 	},
 	"declarer et affecter": {
 		"prefix": "declarer et affecter",
 		"body": [
-			"declarer ${1:nom} : ${2|entier,entier_naturel,reel,booleen,caractere,char,string,tableau_de|} <- ${3:valeur};"
+			"declarer ${1:nom} : ${2|entier,entier_naturel,reel,booleen,caractere,string,tableau_de|} <- ${3:valeur};"
 		],
 		"description": "Déclaration avec affectation (menu de types)"
 	},
 	"declarer constante": {
 		"prefix": "declarer constante",
 		"body": [
-			"declarer K${1:nom} : ${2|entier,entier_naturel,reel,booleen,caractere,char,string|} <- ${3:valeur};"
+			"declarer K${1:nom} : ${2|entier,entier_naturel,reel,booleen,caractere,string,tableau_de|} <- ${3:valeur};"
 		],
 		"description": "Déclaration d'une constante (menu de types)"
 	},
@@ -143,11 +143,6 @@
 		"body": ["caractere"],
 		"description": "Type caractère ('a')"
 	},
-	"char": {
-		"prefix": "char",
-		"body": ["char"],
-		"description": "Type caractère (alias)"
-	},
 	"string": {
 		"prefix": "string",
 		"body": ["string"],
@@ -156,7 +151,7 @@
 	"tableau_de": {
 		"prefix": "tableau_de",
 		"body": [
-			"tableau_de ${1:taille} ${2|entier,entier_naturel,reel,booleen,caractere,char,string|}"
+			"tableau_de ${1:taille} ${2|entier,entier_naturel,reel,booleen,caractere,string|}"
 		],
 		"description": "Type tableau (taille optionnelle, menu pour le type d'élément)"
 	}
