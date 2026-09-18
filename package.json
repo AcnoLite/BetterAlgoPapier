@@ -9,7 +9,7 @@
     },
     "description": "Coloration syntaxique, snippets et complétion pour l'algorithmique sur papier de l'IUT d'Aix",
     "icon": "extension.png",
-    "version": "1.0.2",
+    "version": "1.0.3",
 
     "engines": {
         "vscode": "^1.39.0"

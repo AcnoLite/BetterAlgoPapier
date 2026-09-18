@@ -2,22 +2,22 @@
 	"fonction": {
 		"prefix": "fonction",
 		"body": [
-			"fonction ${1:nom}(${2:x : in type}) renvoie ${3|entier,entier_naturel,reel,booleen,caractere,string,tableau_de|}",
+			"fonction ${1:nom}(${2:variable : marqueur type}) renvoie ${3|entier,entier_naturel,reel,booleen,caractere,string,tableau_de|}",
 			"debut",
 			"\t$0",
 			"fin"
 		],
-		"description": "Insertion d'un bloc de fonction"
+		"description": "Bloc de fonction (marqueur : in, out ou in_out)"
 	},
 	"procedure": {
 		"prefix": "procedure",
 		"body": [
-			"procedure ${1:nom}(${2:x : in type})",
+			"procedure ${1:nom}(${2:variable : marqueur type})",
 			"debut",
 			"\t$0",
 			"fin"
 		],
-		"description": "Insertion d'un bloc de procedure"
+		"description": "Bloc de procedure (marqueur : in, out ou in_out)"
 	},
 	"algorithme": {
 		"prefix": "algorithme",
@@ -69,6 +69,69 @@
 			"ffaire"
 		],
 		"description": "Insertion d'un bloc \"tant que\""
+	},
+	"jusqua": {
+		"prefix": "jusqua",
+		"body": [
+			"jusqua (${1:condition})",
+			"faire",
+			"\t$0",
+			"ffaire"
+		],
+		"description": "Boucle jusqua (pré-testée : tourne tant que la condition est fausse)"
+	},
+	"repeter": {
+		"prefix": "repeter",
+		"body": [
+			"repeter",
+			"\t$0",
+			"jusqua (${1:condition})"
+		],
+		"description": "Boucle repeter ... jusqua (post-testée : au moins un tour)"
+	},
+	"boucle": {
+		"prefix": "boucle",
+		"body": [
+			"boucle",
+			"\t$0",
+			"fboucle"
+		],
+		"description": "Boucle infinie (sortir avec sortie;)"
+	},
+	"vaut": {
+		"prefix": "vaut",
+		"body": [
+			"vaut "
+		],
+		"description": "Comparaison : égal à (==)"
+	},
+	"ne_vaut_pas": {
+		"prefix": "ne_vaut_pas",
+		"body": [
+			"ne_vaut_pas "
+		],
+		"description": "Comparaison : différent de (!=)"
+	},
+	"ET_ALORS": {
+		"prefix": "ET_ALORS",
+		"body": [
+			"ET_ALORS "
+		],
+		"description": "ET logique avec court-circuit"
+	},
+	"OU_SINON": {
+		"prefix": "OU_SINON",
+		"body": [
+			"OU_SINON "
+		],
+		"description": "OU logique avec court-circuit"
+	},
+	"sinon_si": {
+		"prefix": "sinon_si",
+		"body": [
+			"sinon_si (${1:condition})"
+		],
+		"description": "Branche sinon_si (à insérer dans un bloc si existant)"
 	},
 	"si": {
 		"prefix": "si",

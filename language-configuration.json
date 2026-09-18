@@ -44,27 +44,9 @@
         ]
     ],
     // symbols that are auto closed when typing
+    // (seulement des symboles : les mots-clés ne sont PAS auto-fermés,
+    // sinon "si" insère "fsi" même dans les commentaires)
     "autoClosingPairs": [
-        [
-            "debut",
-            "fin"
-        ],
-        [
-            "faire",
-            "ffaire"
-        ],
-        [
-            "boucle",
-            "fboucle"
-        ],
-        [
-            "si",
-            "fsi"
-        ],
-        [
-            "choix_sur",
-            "fchoix"
-        ],
         [
             "{",
             "}"

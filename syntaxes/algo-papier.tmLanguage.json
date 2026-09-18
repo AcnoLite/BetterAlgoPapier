@@ -46,22 +46,22 @@
 					"name": "storage.type",
 					"match": "\\b(caractere|string|tableau_de|booleen|entier|entier_naturel|reel)\\b"
 				},
-				{
-					"name": "constant.numeric",
-					"match": "\\b(\\d)\\b"
-				},
+			{
+				"name": "constant.numeric",
+				"match": "\\b\\d+(\\.\\d+)?\\b"
+			},
 				{
 					"name": "constant.language",
 					"match": "\\b(vrai|faux)\\b"
 				},
-				{
-					"name": "keyword.operator",
-					"match": "\\b(vaut|ne_vaut_pas|<|>|<=|>=)\\b"
-				},
-				{
-					"name": "keyword.control",
-					"match": "\\b(OU|OU_SINON|ET|ET_ALORS)\\b"
-				}
+			{
+				"name": "keyword.operator.algo-papier",
+				"match": "<-|==|!=|<=|>=|<|>"
+			},
+			{
+				"name": "keyword.control.algo-papier",
+				"match": "\\b(vaut|ne_vaut_pas|OU|OU_SINON|ET|ET_ALORS)\\b"
+			}
 			]
 		},
 		"strings": {
@@ -88,7 +88,7 @@
 		},
 		"expression": {
 			"name": "support.function",
-			"match": "afficher|saisir|ligne_suivante|taille|toupper|tolower|succ|pred|allonger|redimensionner"
+			"match": "\\b(afficher|saisir|ligne_suivante|taille|toupper|tolower|succ|prec|redimensionner)\\b"
 		},
 		"params": {
 			"name": "variable.parameter",
